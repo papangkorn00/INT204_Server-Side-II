@@ -3,7 +3,7 @@ package sit.int204.classicmodelsservice.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import sit.int204.classicmodelsservice.entities.Student;
+import sit.int204.classicmodelsservice.models.Student;
 import sit.int204.classicmodelsservice.services.GradeService;
 
 @RestController
@@ -13,10 +13,12 @@ public class GradeController {
     private GradeService service;
 
     @PostMapping("")
-    public Student addNewStudent(@RequestBody Student student){
-        return  service.calculateGrade(student);
+    public Student addNewStudent(@RequestBody Student student) {
+        return service.gradeService(student);
     }
 
 //    @GetMapping("")
-//    public
+//    public Student getStudent(@RequestBody Student student){
+//        return
+//    }
 }
