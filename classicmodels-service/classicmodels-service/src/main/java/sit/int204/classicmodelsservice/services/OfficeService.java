@@ -15,8 +15,17 @@ public class OfficeService {
     @Autowired
     private OfficeRepository repository;
 
-    public List<Office> getAllOffice() {
-        return repository.findAll();
+//    public List<Office> getAllOffice(){
+//        return repository.findAll();
+//    }
+
+    public List<Office> getAllOffice(String city) {
+        if (city == null || city.isEmpty()) {
+            return repository.findAll();
+        } else {
+            return repository.findByCityContains(city);
+        }
+//        return repository.findAll();
     }
 
     public Office getOffice(String officeCode) {
@@ -45,4 +54,6 @@ public class OfficeService {
         Office existingOffice = repository.findById(officeCode).orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND, "Office Id " + officeCode + " DOES NOT EXIST !!!"));
         return repository.save(office);
     }
+
+
 }

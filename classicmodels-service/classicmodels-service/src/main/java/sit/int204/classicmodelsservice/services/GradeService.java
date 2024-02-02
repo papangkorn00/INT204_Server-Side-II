@@ -12,7 +12,7 @@ public class GradeService {
         return student.calculateGrade();
     }
 
-    public Student getAllStudent(Student student){
-
-    }
+//    public Student getAllStudent(Student student){
+//
+//    }
 }

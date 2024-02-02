@@ -13,10 +13,16 @@ public class OfficeController {
     @Autowired
     private OfficeService service;
 
-    @GetMapping("")
-    public List<Office> getAllOffices() {
-        return service.getAllOffice();
-    }
+//    @GetMapping("")
+//    public List<Office> getAllOffices() {
+//        return service.getAllOffice();
+//    }
+
+//    @GetMapping("")
+//    public List<Office> getAllOffice(@RequestParam(required = false) String city) {
+//        return service.getAllOffice(city);
+//    }
+
 
     @GetMapping("/{officeCode}")
     public Office getOfficeById(@PathVariable String officeCode) {
