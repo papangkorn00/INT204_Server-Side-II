@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 import sit.int204.classicmodelsservice.entities.Customer;
-import sit.int204.classicmodelsservice.entities.Office;
 import sit.int204.classicmodelsservice.services.CustomerService;
 
 import java.util.List;

@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import sit.int204.classicmodelsservice.entities.Customer;
-import sit.int204.classicmodelsservice.entities.Employee;
 import sit.int204.classicmodelsservice.repositories.CustomerRepository;
 
 import java.util.List;
