@@ -13,10 +13,12 @@ public class Employee {
     @Id
     @Column(name = "employeeNumber", nullable = false)
     private Integer id;
+
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "office")
+    @JoinColumn(name = "officeCode")
     private Office office;
+
     @Column(name = "lastName", nullable = false, length = 50)
     private String lastName;
     @Column(name = "firstName", nullable = false, length = 50)
@@ -25,10 +27,12 @@ public class Employee {
     private String extension;
     @Column(name = "email", nullable = false, length = 100)
     private String email;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "reportsTo")
     private Employee employees;
+
     @Column(name = "jobTitle", nullable = false, length = 50)
     private String jobTitle;
 }

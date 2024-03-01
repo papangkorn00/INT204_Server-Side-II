@@ -17,6 +17,10 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    public List<Product> getProductByCategory(String category) {
+        return productRepository.getProductByCategory(category);
+    }
+
     public Page<Product> searchProductByPriceOrProductName(Double lower, Double upper, String productName, String[] sortBy, String[] direction, int pageNo, int pageSize) {
         if (lower <= 0 && upper <= 0) {
             upper = productRepository.findFirstByOrderByPriceDesc().getPrice();
@@ -63,9 +67,6 @@ public class ProductService {
         return searchProductByPriceOrProductName(lower, upper, productName, null, null);
     }
 
-    public List<Product> searchProductByCategory(String category) {
-        return productRepository.getProductByCategory(category);
-    }
 
     //    public List<Product> getProductByCategory(String productLine) {
 //        return productRepository.findByProductLineStartingWith(productLine);
