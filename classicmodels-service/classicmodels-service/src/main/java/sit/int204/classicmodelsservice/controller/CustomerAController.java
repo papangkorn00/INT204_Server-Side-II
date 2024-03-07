@@ -22,4 +22,9 @@ public class CustomerAController {
     public List<CustomerA> insertCustomerAs(@RequestBody List<CustomerA> customerAs){
         return service.insertCustomers(customerAs);
     }
+
+    @DeleteMapping("/{customerId}")
+    public void removeOffice(@PathVariable Long customerId){
+        service.removeCustomer(customerId);
+    }
 }
